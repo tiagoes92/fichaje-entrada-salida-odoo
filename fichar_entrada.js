@@ -14,7 +14,7 @@ const { chromium } = require('playwright');
 
         // Ingresar usuario y contraseña
         await page.fill('input[name="login"]', process.env.ERP_USER);
-        await page.fill('input[name="password"]', process.env.ERP_PASS); w
+        await page.fill('input[name="password"]', process.env.ERP_PASS);
 
         // Enviar formulario de login
         await Promise.all([
