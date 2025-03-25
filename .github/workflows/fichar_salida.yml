@@ -28,4 +28,4 @@ jobs:
         env:
           ERP_USER: ${{ secrets.ERP_USER }}
           ERP_PASS: ${{ secrets.ERP_PASS }}
-        run: node salida
+        run: node run salida
