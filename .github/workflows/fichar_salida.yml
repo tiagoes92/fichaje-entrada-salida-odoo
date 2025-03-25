@@ -1,0 +1,31 @@
+name: Fichaje salida automático
+
+on:
+  schedule:
+    - cron: '30 14 * * 1-5'  # 14:30 UTC = 16:30 hora España (lunes a viernes)
+  workflow_dispatch:
+
+jobs:
+  fichar_salida:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Instalar Playwright y navegadores
+        run: npx playwright install --with-deps
+
+      - name: Ejecutar script de fichaje salida
+        env:
+          ERP_USER: ${{ secrets.ERP_USER }}
+          ERP_PASS: ${{ secrets.ERP_PASS }}
+        run: node salida

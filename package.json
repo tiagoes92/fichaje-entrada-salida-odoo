@@ -1,0 +1,16 @@
+{
+  "name": "auto-fichaje",
+  "version": "1.0.0",
+  "main": "fichar_entrada.js",
+  "scripts": {
+    "entrada": "node fichar_entrada.js",
+    "salida": "node fichar_salida.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "playwright": "^1.51.1"
+  }
+}
