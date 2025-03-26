@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { chromium } = require('playwright');
 
 (async () => {
@@ -32,11 +33,20 @@ const { chromium } = require('playwright');
         // Si conoces la URL exacta, ponla aquí:
         await page.goto('https://erp.teknei.es/web#cids=78&menu_id=327&action=460');
 
+        await page.waitForTimeout(2000);
+
         // Esperar a que cargue el botón de fichar (clase: btn btn-success)
-        //await page.waitForSelector('button.btn.btn-success');
+        await page.waitForSelector('button.btn.btn-warning');
+
+        await page.waitForTimeout(2000);
+
 
         // Hacer clic en el botón de fichar
         await page.click('button.btn.btn-warning');
+
+        await page.waitForTimeout(2000);
+
+        
         console.log('✅ Botón de fichar pulsado');
 
         // (Opcional) captura del estado
