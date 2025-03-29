@@ -4,8 +4,8 @@ on:
   schedule:
     # Lunes a jueves
     - cron: '00 16 * * 1-4'
-    # Viernes a las 15:00 (13:00 UTC)
-    - cron: '0 14 * * 5'
+    # Viernes a las 15:10 (13:10 UTC)
+    - cron: '10 14 * * 5'
   workflow_dispatch:
 
 jobs:
