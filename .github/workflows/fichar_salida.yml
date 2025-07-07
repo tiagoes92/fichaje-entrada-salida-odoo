@@ -3,7 +3,8 @@ name: Fichaje salida automático
 on:
   schedule:
     # Lunes a jueves 17:00
-    - cron: '00 15 * * 1-4'
+    # - cron: '00 15 * * 1-4'
+    - cron: '10 13 * * 1-4'
     # Viernes a las 15:10
     - cron: '10 13 * * 5'
   workflow_dispatch:
